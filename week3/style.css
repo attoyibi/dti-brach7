@@ -1,0 +1,32 @@
+@media(max-width : 768px){
+    .color-red{
+        background-color: red;
+
+}
+
+
+
+}
+.border-red{
+    border: solid;
+}
+
+.background-grey{
+    background-color: grey;
+}
+
+.background-blue{
+    background-color: blue;
+}
+
+.background-green{
+    background-color: green;
+}
+
+.text-white{
+    color: white;
+}
+
+.margin-top{
+    margin-top: 100px;
+}
