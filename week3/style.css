@@ -1,10 +1,47 @@
-@media(max-width : 768px){
+/* tag html */
+/* li{
+    background-color: bisque;
+} */
+/* class */
+h1{
+    margin: 0 ;
+}
+body{
+    background-color: gray;
+}
+.body{
+    background-color: blueviolet;
+}
+.color-red{
+    background-color: red;
+}
+.color-blue{
+    background-color: blue;
+}
+.flex-space-between{
+    display: flex; 
+    justify-content: space-between
+}
+.flex-direction{
+    flex-direction: row-reverse
+}
+.flex-center{
+    display: flex; 
+    justify-content: center
+}
+
+@media (max-width: 768px){
+    body{
+        background-color: white;
+    }
+    .flex-space-between{
+        flex-direction: column;
+    }
     .color-red{
         background-color: red;
-
+    }
 }
 
-}
 .border-red{
     border: solid;
 }
