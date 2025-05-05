@@ -1,76 +1,148 @@
-// src di week3 
+// pembuatan variabel var, let, const
 
-// console.log("hello word", nama)
+// cara paling lama
+// sudah jarang gunakan. mirip dengan let
+var nama = 'muchson';
+nama = 'rizky';
+// lebih baru
+// variable yang digunakan, jika isinya sering berubah
+let pekerjaan = 'mentor DTI';
+pekerjaan = 'pegawai';
+pekerjaan = 'pelajar';
+pekerjaan = 'guru';
+// lebih baru
+// variabel yang digunakan jika isinya tidak berubah
+const alamat = 'madiun';
+//alamat = "jakarta"// akan error karena nilai const tidak boleh berubah
+// console.log(nama);// console itu menunjukkan data dalam variabel
+// console.log(pekerjaan);
+// console.log(alamat);
 
-// object
+// primitive data type
+
+//number : tipe data yang berguna jika di jumlah
+let money_a = 93;
+let money_b = 'kiki';
+let jumlah = money_a + money_b;
+
+let list_students = ['kiki', 'nisa', 2025];
+
+// console.log("list peserta : ", list_students);
+console.log('list peserta : ', list_students[2]);
+
+const menuWarung = new Map([['key', 'value']]);
+console.log('menu warung : ' + menuWarung.get('key'));
+
 const nameObject = {
     "key": "value"
 }
 
-// key = alamat rumah
-//value = pemilik/isi dari rumah
+// let nama = "anisa"
+
 let person = {
     name: "muchson",
     title: "tutor",
     age: 25
 }
-// contoh array of object
 const listStudent = [
-    //index 0
     {
         name: "rizky",
         age: 20
     },
-    //index 1
     {
-        name: "nisa",
+        name: "anisa",
         age: 20
     },
+
 ];
+//console.log(person.age);
+//console.log(listStudent[0].name);
+//listStudent.forEach()
+//function itu bayangkan sebagai saklar
+
+//function nyalakanLampu(){
+//console.log("Lampu Menyala");
+//let lebarPersegi = 3*3;
+//return lebarPersegi;
+// }
+//console.log(nyalakanLampu())
+//console.log("Di Bawah Lampu");
+
+//function nyalakanLampu(){
+//console.log("Lampu Menyala");
+//}
+
+//console.log("Di Bawah Lampu");
 
 
-// console.log(listStudent[0].name);
-// console.log(listStudent[1].name);
-// listStudent.forEach()
-//=============function=============================
-// function itu bayangkan seperti sebuah saklar
+// function nyalakanLampu(){
+//     return "Lampu Nyala";
+// }
 
-function nyalakanLampuLog() {
-    console.log("lampu Nyala")
-}
-// ini dinamakan arrow function dan sering bagnet di pakek
+// console.log(nyalakanLampu());
+
+// function nyalakanLampu(nama){
+//     console.log("log di dalam function : ", nama);
+//     return "lampu nyala";
+// }
+
+// console.log(nyalakanLampu(listStudent[0].name, "langsung"));
+// console.log(nyalakanLampu(listStudent[1].name, "langsung"));
+
+// function sapa(nama) {
+//     return "Halo, " + nama + "! Selamat datang ";
+// }
+
+// let pesan = sapa("Anisa");
+// console.log(pesan);
+
+// function celciusKeFahrenheit(celcius){
+//     let fahrenheit = (celcius * 9/5) + 32;
+//     return fahrenheit;
+// }
+// console.log(celciusKeFahrenheit(40));
+
+//ini dinamakan arrow function dan sering sekali terpakai
+//= () => {} anonimus function
 // let variabelArrowFunction = () => {
 //     console.log("di dalam arrow function")
 // }
-// variabelArrowFunction();
-// let variabelFunction = function namaFunction() {
-// }
+// variabelArrowFunction()
+
+//let variabelArrowFunction = function namaFunction(){}
+//ini yang normal  
 // let globalVar = "global123";
+// function  nyalakanLampu(nama, dataString){
+//     console.log("log di dalam funvction : ", nama);
+//}
 
-let nama = "muchson"
-function nyalakanLampu(nama) {
-    // sama dengan dua kali "==" artinya MEMBANDINGKAN. kalau beda balikannya akan FALSE
-    // sama dengan tiga kali "===" artinya apa hayo ? 
-    if (nama == "rizky") {
-        console.log("hai rizky, lampu nyala ni");
-    } else if (nama == "nisa") {
-        console.log("hai nisa, lampu nyala ni");
-    } else {
-        console.log("wah bukan rizky dan nisa, lampu gak nyala ya");
-    }
-    console.log("bukti kalau functionnya nyala");
+// let nama = "rizky"
+// function nyalakanLampu(nama) {
+//  //sama dengan dua kali "==" artinya membandingkan
 
-    // return "lampu nyala";
-}
+//    if (nama == "rizky") {
+//     console.log("hai rizky, lampu nyala ni", nama);
+//    }
+//    console.log("bukti kalau function nyala")
+// }
 
 // nyalakanLampu(nama)
-// console.log("di bawah lampu");
+// //console.log("dibawah lampu")
 
-// contoh for 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
+
+// let mobil = "avanza"
+// function jenisMobil(mobil) {
+//     if (mobil == "avanza") {
+//         console.log("Mobil avanza ini berwarna abu-abu ", mobil)
+//     }
+//     console.log("bukti kalau mobil benar warna abu-abu")
 // }
 
-for (let index = 0; index < 5; index++) {
+// jenisMobil(mobil)
+
+
+//contoh for
+for (let index = 0; index < Array.length; index++) {
     console.log(index);
 }
+
