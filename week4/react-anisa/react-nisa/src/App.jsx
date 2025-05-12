@@ -9,10 +9,12 @@ function App() {
   let helloWord = "Halo ini App";
   let name = "Anisa";
   let age = 23;
+  let job = "Teacher"
   let listMentee = ["muchson", "rizky", "anisa"];
   let listMenteeObj = {
     key: "hello",
   };
+  console.log(listMenteeObj);
   let listFruit = ["pepaya", "semangka", "pisang", "jambu"];
 
   const products = [
@@ -59,7 +61,7 @@ function App() {
   return (
     //letak tampilan
     <div>
-      <Header name={name} age={age} listFruit={listFruit} />
+      <Header name={name} age={age} list={listFruit} products={products} job={job}  /> 
       <ul>
         {listFruit.map((item, index) => (
           <li key={index}>{item}</li>
@@ -79,11 +81,7 @@ function App() {
       <h2 className="header-container">{listMenteeObj.key}</h2>
       <p style={{ display: "none" }}>ini ada paragraf display none</p>
       {isParagraph ? <p>hilang jsx-nya ternary</p> : false}
-      {isParagraph && (
-        <p>
-          hilang <jsx-nya></jsx-nya>
-        </p>
-      )}
+      {isParagraph && <p>hilang jsx-nya</p>}
       <div style={{ display: "flex", flexDirection: "column" }}>
         <input type="text" />
         <input type="checkbox" name="" id="" />
