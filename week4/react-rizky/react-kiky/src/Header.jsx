@@ -1,5 +1,6 @@
 function Header() {
-  return <h2>ini header</h2>;
+  let { name, age, list, listFruit } = props;
+  return <h2>ini header {name}</h2>;
 }
 
 export default Header;

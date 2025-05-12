@@ -57,7 +57,7 @@ function App() {
     // tempat tampilan/render
     // harus ada 1 parent
     <div>
-      <Header />
+      <Header name={name} />
 
       <ul>
         {listFruit.map((item, index) => (
@@ -78,7 +78,12 @@ function App() {
 
       <h1>{listObj.key}</h1>
       <h2>{list}</h2>
-      {/* <h2>
+      {/* <h2><ol>
+      {props.products.map((product, index) => (
+        <li key={index}>{product.price}</li>
+      ))}
+      <li></li>
+    </ol>
         {() => {
           hitungAngka();
         }}
@@ -88,7 +93,7 @@ function App() {
         <h2 className="backgroundColor">This is secondary</h2>
       </div>
       <button type="button">submit</button>
-      <Footer />
+      <Footer products={products} />
     </div>
   );
 }
