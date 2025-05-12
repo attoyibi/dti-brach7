@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 import './assets/css/header.css'
-=======
-import "./assets/css/header.css";
->>>>>>> 7e6c7473ff6e27181ec6ea87b593fdb1b22cc28c
 
 export default function Header(props) {
   let {age, job, name, products, list} = props
   console.log("ini adalah props : ", props.products[0].name);
   return (
     <div>
-<<<<<<< HEAD
-      <h1>Header {props.name}</h1>
-=======
       <h1 className="background-blue header-container">Header {props.name}</h1>
       <p>tampilan : {props.products[0].name}</p>
       <p>tampilan : {age}</p>
@@ -38,7 +31,6 @@ export default function Header(props) {
           ))}
         </ul>
       </>
->>>>>>> 7e6c7473ff6e27181ec6ea87b593fdb1b22cc28c
     </div>
   );
 }
