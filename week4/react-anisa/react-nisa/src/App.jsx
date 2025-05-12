@@ -1,25 +1,96 @@
-import Header from './Header'
-import Footer from './Footer'
-function App(){ //parent
+import Header from "./Header";
+import Footer from "./Footer";
+import Card from "./Card";
+function App() {
+  //parent
+  //letak logika, kita bisa menulis semua terkait JavaScript
   let isParagraph = true;
   let red = "red";
-  //letak logika
-  return(
+  let helloWord = "Halo ini App";
+  let name = "Anisa";
+  let age = 23;
+  let listMentee = ["muchson", "rizky", "anisa"];
+  let listMenteeObj = {
+    key: "hello",
+  };
+  let listFruit = ["pepaya", "semangka", "pisang", "jambu"];
+
+  const products = [
+    {
+      id: 1,
+      name: "Laptop ASUS Vivobook",
+      price: 8500000,
+      category: "Elektronik",
+      inStock: true,
+      rating: 4.5,
+    },
+    {
+      id: 2,
+      name: "Kemeja Pria Lengan Panjang",
+      price: 150000,
+      category: "Fashion",
+      inStock: false,
+      rating: 4.2,
+    },
+    {
+      id: 3,
+      name: "Kopi Arabika 250gr",
+      price: 75000,
+      category: "Minuman",
+      inStock: true,
+      rating: 4.8,
+    },
+  ];
+
+  //kita bisa menulis if
+  if (name == "Anisa") {
+    helloWord = helloWord + name;
+    console.log(helloWord + name);
+  }
+
+  function umurSaya() {
+    if (age == 23) {
+      listMenteeObj.key = 23;
+    }
+  }
+
+  umurSaya();
+
+  return (
     //letak tampilan
     <div>
-      <Header/> 
-      <h1 className='background-blue'>App Komponen</h1>
-      <p style={{ display: 'none' }}>ini ada paragraf display none</p>
-
+      <Header name={name} age={age} listFruit={listFruit} />
+      <ul>
+        {listFruit.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <hr />
+      <ol>
+        {products.map((product) => (
+          <>
+            <li key={product.id}>{product.name}</li>
+            <p>{product.price}</p>
+          </>
+        ))}
+      </ol>
+      <h1 className="header-container">{helloWord}</h1>
+      <h2 className="header-container">{listMentee[0]}</h2>
+      <h2 className="header-container">{listMenteeObj.key}</h2>
+      <p style={{ display: "none" }}>ini ada paragraf display none</p>
       {isParagraph ? <p>hilang jsx-nya ternary</p> : false}
-      {isParagraph && <p>hilang <jsx-nya></jsx-nya></p>}
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <input type="text" />
-      <input type="checkbox" name='' id='' />
-      <button type="button">submit </button>
+      {isParagraph && (
+        <p>
+          hilang <jsx-nya></jsx-nya>
+        </p>
+      )}
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <input type="text" />
+        <input type="checkbox" name="" id="" />
+        <button type="button">submit </button>
+      </div>
+      <Footer />
     </div>
-    <Footer/>
-  </div>
   );
 }
 export default App;
