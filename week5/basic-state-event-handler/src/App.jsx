@@ -1,5 +1,7 @@
 // tempat import inisialisasi
 import React, { useState } from 'react'
+import Form from './Form';
+
 
 export default function App() {
   // tempat logic
@@ -11,7 +13,8 @@ export default function App() {
   const [score, setScore] = useState(90); // number
   const [color, setColor] = useState("red");
   const [size, setSize] = useState("10"); //string
-  const [isShow, setIsShow] = useState(true); //string
+  const [isShow, setIsShow] = useState(true); //boolean
+  const [isLoading, setIsLoading] = useState(false); //boolean
 
   //event handler
   function handleClick() {
@@ -40,6 +43,7 @@ export default function App() {
   }
 
   function changeShow() {
+    //untuk merupah value dari true menjadi false
     setIsShow(!isShow);
   }
   console.log("boolean", isShow);
@@ -47,10 +51,22 @@ export default function App() {
   return (
     // tempat ditampikan
     <div>
+      <h1>App Component</h1>
       <p style={{ backgroundColor: color, fontSize: size }}>name : {name}</p>
       <p>Age : {age}</p>
       <p>Score : {score}</p>
-      {isShow ? <p>Color : {color}</p> : false}
+      {/* pakek ? artinya ternary versi if else*/}
+      {isShow ? <p>Color : {color}</p> : <p>Loading...</p>}
+      {isShow && <p>Color and : {color}</p>}
+      {/* pakek ? artinya ternary versi else if*/}
+      {/* {
+        isShow ?// kondisi
+          (<p>Color : {color}</p>) // hasil
+          : isLoading ? ( // kondisi
+            <p>Loading ..</p>
+          ) : null
+      } */}
+
       {/* <p>varAge : {varAge}</p> */}
       {/* <button type="button" onClick={handleClick}>+</button> */}
       <button type="button" onClick={handleClickScore}>+10</button>
@@ -58,6 +74,8 @@ export default function App() {
       <button type="button" onClick={changeGray}>gray</button>
       <button type='button' onClick={changeSize}>Size20</button>
       <button type='button' onClick={changeShow}>isShow</button>
+      <hr />
+      <Form />
     </div>
   )
 }
