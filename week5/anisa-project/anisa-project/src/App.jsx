@@ -54,7 +54,7 @@ export default function App() {
       <p style={{ backgroundColor: color, fontSize: size }}>name : {name}</p>
       <p>Age : {age}</p>
       <p>Score : {score}</p>
-      {isShow ? <p>Color : {color}</p> : false};  
+      {isShow ? <p>Color : {color}</p> : false}  
       {/* <p>varAge : {varAge}</p> */}
       {/* <button type="button" onClick={handleClick}>+</button> */}
       <button type="button" onClick={handleClickScore}>+10</button>

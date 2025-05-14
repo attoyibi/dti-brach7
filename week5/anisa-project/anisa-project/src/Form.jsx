@@ -76,6 +76,7 @@ export default function Form() {
         placeholder="email"
         required
       ></input>
+      <hr></hr>
       <h5>List Of Users</h5>
       {usersData.map((user) => (
         <div
@@ -87,6 +88,7 @@ export default function Form() {
         >
           <li>{user.name}</li>
           <li>{user.age}</li>
+          <li>{user.email}</li>
           {user.age >= 25 ? <p>Umur 25 keatas</p> : <p>belum cukup umur</p>}
         </div>
       ))}
