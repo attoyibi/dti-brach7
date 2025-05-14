@@ -18,7 +18,7 @@ export default function Form() {
   const [age, setAge] = useState();
   const [email, setEmail] = useState();
   const [emailStatus, setEmailStatus] = useState(false);
-  const [userData, setUserData] = useState([
+  const [usersData, setUserData] = useState([
     {
       name: "anisa",
       age: 23,
@@ -50,15 +50,26 @@ export default function Form() {
       setEmailStatus(false);
     }
   }
+  function handleClick() {
+    // console.log("user data", usersData);
+    console.log("spread operator user data", [...usersData]);
+    console.log("user data", usersData);
+    //cara ini tidak menghasilkan re render
+    // usersData.push({name: name}) ;
+    // setUserData(usersData);
+    setUserData([...usersData, { name: name, age: age }]); //contoh untuk create data pada array
+    //dimasukkan logicnya
+  }
+
   return (
     <>
       <div onMouseEnter={handleMouseEnter}>Form Component</div>
-      <input onChange={handleChangeName} type="text" placeholder="name"></input>
       <p>Name : {name}</p>
+      <input onChange={handleChangeName} type="text" placeholder="name"></input>
       <p>Age : {age}</p>
-      <p>Email : {email}</p>
-      {emailStatus && <p>Status : Email Valid</p>}
       <input onChange={handleChangeAge} type="number" placeholder="age"></input>
+      {emailStatus && <p>Status : Email Valid</p>}
+      <p>Email : {email}</p>
       <input
         onChange={handleChangeEmail}
         type="text"
@@ -66,12 +77,22 @@ export default function Form() {
         required
       ></input>
       <h5>List Of Users</h5>
-      {userData.map((user) => (
-        <div>
+      {usersData.map((user) => (
+        <div
+          style={{
+            border: "2px solid gray",
+            marginBottom: "5px",
+            padding: "5px",
+          }}
+        >
           <li>{user.name}</li>
+          <li>{user.age}</li>
           {user.age >= 25 ? <p>Umur 25 keatas</p> : <p>belum cukup umur</p>}
         </div>
       ))}
+      <button type="button" onClick={handleClick}>
+        submit
+      </button>
     </>
   );
 }
