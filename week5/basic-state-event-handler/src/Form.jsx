@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 export default function Form() {
-
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [emailStatus, setEmailStat] = useState(false);
@@ -36,7 +34,17 @@ export default function Form() {
             setEmailStat(false);
         }
     }
+    function handleClick() {
+        // console.log("user data", usersData);
+        console.log("spread operator user data", [...usersData]);
+        console.log("user data", usersData);
+        // cara ini tidak menghasilkan re render. untuk data cuman di masukkan. 
+        // usersData.push({ name: name });
+        // setUserData(usersData);
 
+        setUserData([...usersData, { name: name }]);// contoh untuk create data di dalam sebuah array
+        //baru di masukin logicnya
+    }
     return (
         <>
             <div onMouseEnter={handleMouseEnter}>Form Component</div>
@@ -48,11 +56,16 @@ export default function Form() {
             <hr />
             <h5>List of Users</h5>
             {usersData.map((user) => (
-                <>
+                <div style={{ border: "2px solid gray", marginBottom: "5px", padding: "5px" }}>
                     <li>{user.name}</li>
-                    {user.age >= 25 ? <p>Umur 25 keatas</p> : <p>belum cukup umur</p>}
-                </>
+                    <li>
+                        {user.age}
+                        {/* {user.age >= 25 ? <>Umur 25 keatas</> : <>belum cukup umur</>} */}
+                    </li>
+                    <li>{user.email}</li>
+                </div>
             ))}
+            <button type="button" onClick={handleClick}>submit</button>
         </>
     )
 }
