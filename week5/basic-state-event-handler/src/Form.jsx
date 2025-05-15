@@ -73,10 +73,13 @@ export default function Form() {
         // v1. contoh untuk menghapus berdasarkan index
         // console.log(true);
         const indexYangDihilangkan = 1;
-        const filteredUsers = usersData.filter((user, index) => index !== indexDiTangkap);
+        const filteredUsers = usersData.filter((user, index) => index === indexDiTangkap);
         // console.log(filteredUsers);
         setUserData(filteredUsers);
+        // v2. menggunakan set state masukkan function
+        // setUserData(dataDiDalamState => dataDiDalamState.filter((user, index) => index !== indexDiTangkap));
     }
+
     return (
         <>
             <div onMouseEnter={handleMouseEnter}>Form Component</div>
