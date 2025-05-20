@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import BodyLeft from './BodyLeft'
 
 export default function App() {
+  const name = "rizky"
   return (
-    <div>App</div>
+    <div>
+      <BodyLeft name={name} />
+    </div>
   )
 }
