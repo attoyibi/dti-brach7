@@ -18,17 +18,38 @@ export default function Products() {
         );
         console.log("ini use effect tahap mounting")
     }, [id]);
+
+    function handleDelete(productId) {
+        console.log("productId", productId);
+        // logika dari delete itu di masukkan kesini
+        axios.delete("https://dummyjson.com/products/" + id).then((response) => {
+            //masuk ke logika ketika benar
+            console.log("berhasil di hapus :", response);
+            const updatedProduct = products.filter((product) => product.id !== productId);
+            setProducts(updatedProduct);
+            alert('produk berhasil di hapus');
+            // bisa di refresh halaman. 
+        }).catch((error) => {
+            // logika ketika salah atau error
+            console.log("gagal di hapus :", error);
+        });
+    }
+
     return (
         <div>Products -
             List Product : {products.map((product, index) => (
                 <>
                     <div style={{ border: 'solid 2px gray', margin: '2px' }}>
                         <div >
+                            Product ID :   {product.id}
+                        </div>
+                        <div >
                             Product Title :   {product.title}
                         </div>
                         <div>
                             Description :   {product.description}
                         </div>
+                        <button onClick={() => handleDelete(product.id)}>Delete</button>
                     </div>
                 </>
             ))}
