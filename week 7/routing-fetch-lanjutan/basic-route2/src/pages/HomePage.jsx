@@ -27,7 +27,7 @@ export default function HomePage() {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault();//mencegah agar tidak reload
         console.log("handle submit", formData);
         axios.post("https://dummyjson.com/products/add", formData).then((response) => {
             // logic post ketika berhasil memasukkan
@@ -46,7 +46,6 @@ export default function HomePage() {
 
         });
     }
-
     return (
         <div>
             <h1>HomePage</h1>
