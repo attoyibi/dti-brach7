@@ -54,13 +54,31 @@ export default function Form() {
     // console.log("user data", usersData);
     console.log("spread operator user data", [...usersData]);
     console.log("user data", usersData);
-    //cara ini tidak menghasilkan re render
-    // usersData.push({name: name}) ;
-    // setUserData(usersData);
-    setUserData([...usersData, { name: name, age: age }]); //contoh untuk create data pada array
+    //cara versi 1
+    const newUserData = [...usersData];
+    newUserData.push({ name: name });
+    setUserData(newUserData);
+
+    //cara versi 2
+    // setUserData([...usersData, { name: name, age: age }]); //contoh untuk create data pada array
     //dimasukkan logicnya
   }
-
+  function handleLastDelete() {
+    // const buah = ["apel", "jeruk", "mangga", "pisang"];
+    // const favorit = buah.pop();
+    //console.log("buah");
+    console.log("handleLastDelete");
+    const updatedUsers = [...usersData];
+    updatedUsers.pop();
+    setUserData(updatedUsers);
+  }
+  // function handleDeleteByIndex() {
+  //   console.log("handleDeleteByIndex");
+  //   const updatedUsers = [...usersData];
+  //   updatedUsers.slice(1, 0);
+  //   console.log("Setelah di slice updatedUsers", updatedUsers);
+  //   setUserData(updatedUsers);
+  // }
   return (
     <>
       <div onMouseEnter={handleMouseEnter}>Form Component</div>
@@ -89,11 +107,17 @@ export default function Form() {
           <li>{user.name}</li>
           <li>{user.age}</li>
           <li>{user.email}</li>
-          {user.age >= 25 ? <p>Umur 25 keatas</p> : <p>belum cukup umur</p>}
+          {/* {user.age >= 25 ? <p>Umur 25 keatas</p> : <p>belum cukup umur</p>} */}
+          {/* <button type="button" onClick={handleDeleteByIndex}>
+            Delete - {usersData}
+          </button> */}
         </div>
       ))}
       <button type="button" onClick={handleClick}>
         submit
+      </button>
+      <button type="button" onClick={handleLastDelete}>
+        Last Delete
       </button>
     </>
   );
